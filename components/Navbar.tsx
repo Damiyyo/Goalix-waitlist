@@ -8,30 +8,39 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-4 left-4 right-4 z-50 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full overflow-hidden">
+    <nav className="fixed top-4 left-4 right-4 z-50">
       
-      {/* Navbar Container */}
-      <div className="max-w-7xl mx-auto overflow-hidden rounded-full">
+      <div className="max-w-7xl mx-auto bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-xl overflow-hidden">
         
         {/* Top Navbar */}
-        <div className="px-6 py-5 flex items-center justify-between bg-white/10 backdrop-blur-lg">
+        <div className="px-6 py-5 flex items-center justify-between">
           
           {/* Logo */}
           <h1 className="text-2xl font-extrabold tracking-wide text-white">
             GOALIX
           </h1>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white">
-            <a href="/" className="hover:text-green-400 transition">
+            
+            <a
+              href="/"
+              className="hover:text-black transition duration-300"
+            >
               Home
             </a>
 
-            <a href="/about" className="hover:text-green-400 transition">
+            <a
+              href="/about"
+              className="hover:text-black transition duration-300"
+            >
               About
             </a>
 
-            <a href="/waitlist" className="hover:text-green-400 transition">
+            <a
+              href="/waitlist"
+              className="hover:text-black transition duration-300"
+            >
               Waitlist
             </a>
           </div>
@@ -39,29 +48,26 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white"
+            className="md:hidden text-white transition"
           >
-            {isOpen ? <X size={26} /> : <Menu size={26} />}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* Separator Line */}
-        {isOpen && (
-          <div className="md:hidden border-t border-white/10" />
-        )}
-
         {/* Mobile Dropdown */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+          className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+            isOpen
+              ? "max-h-64 opacity-100 border-t border-white/10"
+              : "max-h-0 opacity-0"
           }`}
         >
-          <div className="px-6 py-6 flex flex-col items-center gap-5 text-white font-medium bg-white/10 backdrop-blur-lg">
+          <div className="flex flex-col items-center py-6 gap-6 text-white font-medium bg-white/5 backdrop-blur-xl">
             
             <a
               href="/"
               onClick={() => setIsOpen(false)}
-              className="hover:text-black transition"
+              className="hover:text-black transition duration-300"
             >
               Home
             </a>
@@ -69,7 +75,7 @@ export default function Navbar() {
             <a
               href="/about"
               onClick={() => setIsOpen(false)}
-              className="hover:text-black transition"
+              className="hover:text-black transition duration-300"
             >
               About
             </a>
@@ -77,7 +83,7 @@ export default function Navbar() {
             <a
               href="/waitlist"
               onClick={() => setIsOpen(false)}
-              className="hover:text-black transition"
+              className="hover:text-black transition duration-300"
             >
               Waitlist
             </a>
