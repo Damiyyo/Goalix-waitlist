@@ -52,7 +52,7 @@ export default function WaitlistPage() {
       <div className="absolute inset-0">
         
         <img
-          src="/waitlist.jpeg"
+          src="/Waitlist.jpeg"
           alt="Football Stadium"
           className="w-full h-full object-cover"
         />
